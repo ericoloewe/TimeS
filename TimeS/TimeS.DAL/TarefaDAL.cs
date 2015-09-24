@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TimeS.DAL
-{
-    public class Class1
+{    
+    class TarefaDAL
     {
     }
 }

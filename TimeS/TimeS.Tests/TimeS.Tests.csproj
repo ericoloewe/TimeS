@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TimeS.Model\TimeS.Model.csproj">
+      <Project>{e13b0ca8-0a51-42aa-9e11-7caac950d233}</Project>
+      <Name>TimeS.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeS\TimeS.csproj">
       <Project>{05D71B32-B5EB-4279-8C71-996638822A15}</Project>
       <Name>TimeS</Name>

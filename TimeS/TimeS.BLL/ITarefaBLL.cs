@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimeS.Model
+namespace TimeS.BLL
 {
-    public class Class1
+    interface ITarefaBLL
     {
     }
 }

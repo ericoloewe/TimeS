@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TimeS.BLL
+namespace TimeS.DAL
 {
-    public class Class1
+    interface ITarefaDAL
     {
     }
 }

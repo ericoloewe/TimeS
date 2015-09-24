@@ -237,6 +237,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeS.BLL\TimeS.BLL.csproj">
+      <Project>{54951637-37ff-4a79-95b1-1a0b1f097100}</Project>
+      <Name>TimeS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeS.Model\TimeS.Model.csproj">
+      <Project>{e13b0ca8-0a51-42aa-9e11-7caac950d233}</Project>
+      <Name>TimeS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

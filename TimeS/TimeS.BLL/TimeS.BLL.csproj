@@ -39,8 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AtividadeBLL.cs" />
+    <Compile Include="IAtividadeBLL.cs" />
+    <Compile Include="ITarefaBLL.cs" />
+    <Compile Include="ITipoAtividadeBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TarefaBLL.cs" />
+    <Compile Include="TipoAtividadeBLL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TimeS.DAL\TimeS.DAL.csproj">
+      <Project>{a8d887ed-6ad0-477c-8919-3b96accee584}</Project>
+      <Name>TimeS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeS.Model\TimeS.Model.csproj">
+      <Project>{e13b0ca8-0a51-42aa-9e11-7caac950d233}</Project>
+      <Name>TimeS.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
