@@ -6,9 +6,9 @@ namespace TimeS.DAL
 {
     public class TimeSContext : IdentityDbContext<Usuario>
     {
-        public TimeSContext()
-            : base("TimeSConnection")
+        public TimeSContext() : base("TimeSConnection")
         {
+            Database.SetInitializer<TimeSContext>(new TimeSDBInitializer());
         }
 
         public static TimeSContext Create()

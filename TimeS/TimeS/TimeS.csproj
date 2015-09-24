@@ -172,12 +172,66 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Scripts\Features\Angular\angular-animate.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular-resource.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular-strap.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular-strap.tpl.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular-ui-router.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular-ui-router_old.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\angular.min.js" />
+    <Content Include="Content\Scripts\Features\Angular\ui-bootstrap-tpls-0.13.4.min.js" />
+    <Content Include="Content\Scripts\Features\Bootstrap\bootstrap.js" />
+    <Content Include="Content\Scripts\Features\Bootstrap\bootstrap.min.js" />
+    <None Include="Content\Scripts\Features\Jquery\jquery-1.10.2.intellisense.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery-1.10.2.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery-2.1.4.min.js" />
+    <None Include="Content\Scripts\Features\Jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery.validate.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Scripts\Features\Jquery\modernizr-2.6.2.js" />
+    <Content Include="Content\Scripts\Features\Jquery\respond.js" />
+    <Content Include="Content\Scripts\Features\Jquery\respond.min.js" />
+    <None Include="Content\Scripts\Features\Jquery\_references.js" />
+    <Content Include="Content\Scripts\Site\Default\App.js" />
+    <Content Include="Content\Scripts\Site\Default\Controller.js" />
+    <Content Include="Content\Scripts\Site\Default\Default.js" />
+    <Content Include="Content\Scripts\Site\Default\Service.js" />
+    <Content Include="Content\Styles\Default.css" />
+    <Content Include="Content\Styles\Features\bootstrap.css" />
+    <Content Include="Content\Styles\Features\bootstrap.min.css" />
+    <Content Include="Content\Styles\Site\Account\Register.css" />
+    <Content Include="Content\Styles\Site\Home\Index.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\img\background_main.jpg" />
+    <Content Include="Media\img\background_slider.jpg" />
+    <Content Include="Media\img\bg_header_tableGroup.jpg" />
+    <Content Include="Media\img\clean_office_desk.jpg" />
+    <Content Include="Media\img\free-time-tracking-software.png" />
+    <Content Include="Media\img\organized-desk-supplies-stock-today-150603-tease_49b3690b21018a366749d1d69ab2c4da.jpg" />
+    <Content Include="Media\img\pic\S2BUser.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\Open_Sans.woff2" />
+    <Content Include="Content\fonts\Pacifico.woff2" />
+    <Content Include="Content\Scripts\Features\Jquery\jquery-1.10.2.min.map" />
+    <Content Include="Content\Styles\Default.css.map" />
+    <Content Include="Content\Styles\Default.scss" />
+    <Content Include="Content\Styles\Site\Account\Register.css.map" />
+    <Content Include="Content\Styles\Site\Account\Register.scss" />
+    <Content Include="Content\Styles\Site\Global\_Fonts.scss" />
+    <Content Include="Content\Styles\Site\Global\_Mixins.scss" />
+    <Content Include="Content\Styles\Site\Global\_Variables.scss" />
+    <Content Include="Content\Styles\Site\Home\Index.css.map" />
+    <Content Include="Content\Styles\Site\Home\Index.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -228,6 +282,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Media\vid\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
