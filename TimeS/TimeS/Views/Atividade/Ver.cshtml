@@ -1,0 +1,33 @@
+﻿@model IEnumerable<TimeS.Models.Atividade>
+
+@{
+    ViewBag.Title = "Ver";
+}
+
+<h2>Ver</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="atividade in atividades">
+        <td>
+            {{ atividade.Nome }}
+        </td>
+        <td>
+            {{ atividade.Nome }}
+        </td>
+        <td>
+            {{ atividade.Nome }}
+        </td>
+    </tr>
+</table>

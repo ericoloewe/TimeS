@@ -8,6 +8,10 @@ namespace TimeS.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Start()
+        {
+            return View();
+        }
         public ActionResult Index()
         {
             return View();

@@ -184,7 +184,6 @@
     <Content Include="Content\Scripts\Features\Bootstrap\bootstrap.js" />
     <Content Include="Content\Scripts\Features\Bootstrap\bootstrap.min.js" />
     <None Include="Content\Scripts\Features\Jquery\jquery-1.10.2.intellisense.js" />
-    <Content Include="Content\Scripts\Features\Jquery\jquery-1.10.2.js" />
     <Content Include="Content\Scripts\Features\Jquery\jquery-2.1.4.min.js" />
     <None Include="Content\Scripts\Features\Jquery\jquery.validate-vsdoc.js" />
     <Content Include="Content\Scripts\Features\Jquery\jquery.validate.js" />
@@ -205,7 +204,6 @@
     <Content Include="Content\Styles\Site\Account\Register.css" />
     <Content Include="Content\Styles\Site\Home\Index.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Media\img\background_main.jpg" />
@@ -215,8 +213,6 @@
     <Content Include="Media\img\free-time-tracking-software.png" />
     <Content Include="Media\img\organized-desk-supplies-stock-today-150603-tease_49b3690b21018a366749d1d69ab2c4da.jpg" />
     <Content Include="Media\img\pic\S2BUser.jpg" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -232,18 +228,6 @@
     <Content Include="Content\Styles\Site\Global\_Variables.scss" />
     <Content Include="Content\Styles\Site\Home\Index.css.map" />
     <Content Include="Content\Styles\Site\Home\Index.scss" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -252,13 +236,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\_ViewStart_old.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -279,15 +262,15 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Start.cshtml" />
+    <Content Include="Views\Atividade\Ver.cshtml" />
+    <Content Include="Views\Account\Ver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Media\vid\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
