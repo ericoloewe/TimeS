@@ -4,7 +4,7 @@ using TimeS.Model;
 
 namespace TimeS.DAL
 {
-    public class TimeSContext : IdentityDbContext<ApplicationUser>
+    public class TimeSContext : IdentityDbContext<Usuario>
     {
         public TimeSContext()
             : base("TimeSConnection")

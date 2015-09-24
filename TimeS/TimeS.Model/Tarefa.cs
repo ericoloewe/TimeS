@@ -22,9 +22,9 @@ namespace TimeS.Model
         public DateTime Entrega { get; set; }
         [Required]
         public Status? Status { get; set; }
-        public virtual ApplicationUser Responsavel { get; set; }
+        public virtual Usuario Responsavel { get; set; }
 
         public virtual ICollection<Tempo> Tempo { get; set; }
-        public virtual ICollection<ApplicationUser> Seguidores { get; set; }
+        public virtual ICollection<Usuario> Seguidores { get; set; }
     }
 }

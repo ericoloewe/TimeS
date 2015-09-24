@@ -165,7 +165,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -241,6 +240,10 @@
     <ProjectReference Include="..\TimeS.BLL\TimeS.BLL.csproj">
       <Project>{54951637-37ff-4a79-95b1-1a0b1f097100}</Project>
       <Name>TimeS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeS.DAL\TimeS.DAL.csproj">
+      <Project>{a8d887ed-6ad0-477c-8919-3b96accee584}</Project>
+      <Name>TimeS.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\TimeS.Model\TimeS.Model.csproj">
       <Project>{e13b0ca8-0a51-42aa-9e11-7caac950d233}</Project>

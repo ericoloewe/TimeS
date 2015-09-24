@@ -11,6 +11,6 @@ namespace TimeS.Model
         [Required]
         public int Horas { get; set; }
         public DateTime Data { get; set; }
-        public virtual ApplicationUser Author { get; set; }
+        public virtual Usuario Author { get; set; }
     }
 }

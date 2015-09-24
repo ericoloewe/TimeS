@@ -16,10 +16,10 @@ namespace TimeS.Model
         public string Descricao { get; set; }
         [Required]
         public virtual TipoAtividade Tipo { get; set; }
-        public virtual ApplicationUser Criador { get; set; }
-        public virtual ApplicationUser Responsavel { get; set; }
+        public virtual Usuario Criador { get; set; }
+        public virtual Usuario Responsavel { get; set; }
 
         public virtual ICollection<Tarefa> Tarefas { get; set; }
-        public virtual ICollection<ApplicationUser> Participantes { get; set; }
+        public virtual ICollection<Usuario> Participantes { get; set; }
     }
 }
