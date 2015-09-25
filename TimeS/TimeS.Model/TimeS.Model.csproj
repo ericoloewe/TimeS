@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Atividade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,7 +9,7 @@ using System.Web;
 
 namespace TimeS.DAL
 {
-    class TimeSDBInitializer : DropCreateDatabaseAlways<TimeSContext>
+    class TimeSDBInitializer : CreateDatabaseIfNotExists<TimeSContext>
     {
         protected override void Seed(TimeSContext context)
         {
@@ -42,8 +42,11 @@ namespace TimeS.DAL
                 }
             };
 
-            manager.Create(usuarios.First(), "pass@word1");
-            manager.AddToRole(usuarios.First().Id, "Administrador");
+            foreach (Usuario usuario in usuarios)
+            {
+                manager.Create(usuario, "pass@word1");
+                manager.AddToRole(usuario.Id, "Administrador");
+            }
 
             var tipoatividademanager = new TipoAtividadeDAL();
 

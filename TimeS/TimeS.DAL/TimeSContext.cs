@@ -9,6 +9,7 @@ namespace TimeS.DAL
         public TimeSContext() : base("TimeSConnection")
         {
             Database.SetInitializer<TimeSContext>(new TimeSDBInitializer());
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public static TimeSContext Create()

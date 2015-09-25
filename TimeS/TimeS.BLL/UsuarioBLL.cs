@@ -19,5 +19,15 @@ namespace TimeS.BLL
         {
             return usuarioDal.GetUsuarios();
         }
+
+        public Usuario GetUsuario(string id)
+        {
+            return usuarioDal.GetUsuario(id);
+        }
+
+        public Usuario AddUsuario(RegisterViewModel usuario)
+        {
+            return usuarioDal.AddUsuario(usuario);
+        }
     }
 }
