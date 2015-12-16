@@ -1,0 +1,91 @@
+﻿@model IEnumerable<TimeS.Model.TipoAtividade>
+
+@{
+    ViewBag.Title = "Ver";
+}
+
+<div class="container">
+    <h2>Ver</h2>
+    <p>
+        <a data-toggle="modal" data-target="#novaTipoAtividade">Nova</a>
+    </p>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline well well-sm">
+                <span class="glyphicon glyphicon-search" style="padding: 0 15px 0 10px;"></span>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></div>
+                        <input type="text" class="form-control" placeholder="Busque Por Nome Aqui..." ng-model="busca.Nome" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
+                        <input type="text" class="form-control" placeholder="Busque Por Descricao Aqui..." ng-model="busca.Descricao" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th hidden>#</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Nome'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Nome'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Descricao'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Descricao'"></span>
+                    </th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="tipoatividade in tiposatividadesfiltrados = (tiposatividades|filter: busca | orderBy: ordem)" ng-style="{'background-color':busca.Nome==tipoatividade.Nome||busca.Descricao==tipoatividade.Descricao?'lightgray':''}">
+                        <td hidden>{{tipoatividade.Id}}</td>
+                        <td>{{tipoatividade.Nome}}</td>
+                        <td>{{tipoatividade.Descricao}}</td>
+                        <td>
+                            <a data-toggle="modal" data-target="#editarTipoAtividade" ng-click="EditarTipoAtividade(tipoatividade)">Editar</a> |
+                            <a data-toggle="modal" data-target="#deletarTipoAtividade" ng-click="DeletarTipoAtividade(tipoatividade)">Deletar</a> |
+                            <a data-toggle="modal" data-target="#detalhesTipoAtividade" ng-click="DetalhesTipoAtividade(tipoatividade)">Detalhes</a>
+                        </td>
+                    </tr>
+                    <tr ng-show="tiposatividadesfiltrados.length == 0 && tiposatividades!=0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem resultados para os termos "{{'Nome: '+busca.Nome+'\" ou Descricao: \"'+busca.Descricao}}"
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-show="tiposatividades==0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem Tipos de Atividades Para Exibir :'(
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarTipoAtividade" tabindex="-1" role="dialog" aria-labelledby="Editar TipoAtividade" ui-view="editar"></div>
+    <!-- Modal Deletar -->
+    <div class="modal fade" id="deletarTipoAtividade" tabindex="-1" role="dialog" aria-labelledby="Remover TipoAtividade" ui-view="deletar"></div>
+    <!-- Modal Detalhes -->
+    <div class="modal fade" id="detalhesTipoAtividade" tabindex="-1" role="dialog" aria-labelledby="Detalhes TipoAtividade" ui-view="detalhes"></div>
+    <!-- Modal Nova -->
+    <div class="modal fade" id="novaTipoAtividade" tabindex="-1" role="dialog" aria-labelledby="Nova TipoAtividade" ui-view="nova"></div>
+</div>
+

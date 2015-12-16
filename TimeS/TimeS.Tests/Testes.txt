@@ -1,0 +1,50 @@
+            //string[] seguidores = new string[2];
+            //seguidores[0] = "0614082c-5e35-4b9f-b6ea-ba710417d0a9";
+            //seguidores[1] = "5bf96199-5ca3-4ea6-a025-87d32e05b6c7";
+
+            //ITarefaBLL tarefabll = new TarefaBLL();
+            //tarefabll.AddTempoTarefa(6, 43, new TempoViewModel()
+            //{
+            //    Horas = 20,
+            //    Autor_Id = "5bf96199-5ca3-4ea6-a025-87d32e05b6c7"
+            //});
+            //TarefaViewModel novaTarefa = new TarefaViewModel()
+            //{
+            //    Descricao = "fdfdsfdsfsdf",
+            //    Entrega = "16/09/2016",
+            //    Inicio = "16/09/2016",
+            //    Nome = "fsdfsdfsd",
+            //    Responsavel_Id = "5bf96199-5ca3-4ea6-a025-87d32e05b6c7",
+            //    Seguidores = seguidores,
+            //    Status_Id = 3
+            //};
+            //var tarefa = tarefabll.AddTarefa(2, novaTarefa);
+            //var tarefa = tarefabll.GetTarefa(5,21);
+            //tarefa.Status = Status.Cancelado;
+            //TarefaViewModel tarefaEditada = new TarefaViewModel()
+            //{
+            //    Id = tarefa.Id,
+            //    Nome = tarefa.Nome,
+            //    Descricao = tarefa.Descricao,
+            //    Inicio = tarefa.Inicio != null ? tarefa.Inicio.Value.ToShortDateString() : "",
+            //    Hora_Inicio = tarefa.Inicio != null ? tarefa.Inicio.Value.ToShortTimeString() : "",
+            //    Hora_Entrega = tarefa.Entrega != null ? tarefa.Entrega.Value.ToShortTimeString() : "",
+            //    Entrega = tarefa.Entrega != null ? tarefa.Entrega.Value.ToShortDateString() : "",
+            //    Status = Convert.ToString(tarefa.Status),
+            //    Status_Id = Convert.ToInt32(tarefa.Status),
+            //    Seguidores = seguidores
+            //};
+            //Tarefa TarefaEditada = tarefabll.EditarTarefa(5, tarefaEditada);
+            //IAtividadeBLL atividadebll = new AtividadeBLL();
+            //var atividade = atividadebll.GetAtividade(2);
+            //var viewAtividade = new AtividadeViewModel()
+            //{
+            //    Nome = "Ultimate Test 1000",
+            //    Descricao = "teste",
+            //    Tipo_Id = atividade.Tipo_Id,
+            //    Criador_Id = atividade.Criador_Id,
+            //    Responsavel_Id = atividade.Responsavel_Id,
+            //    Participantes = seguidores
+            //};
+            //var novaatividade = atividadebll.AddAtividade(viewAtividade);
+            //var atividadeEditada = atividadebll.EditarAtividade(viewAtividade);

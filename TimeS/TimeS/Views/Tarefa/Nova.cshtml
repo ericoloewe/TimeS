@@ -1,0 +1,105 @@
+﻿@model TimeS.Model.Tarefa
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="NovaTarefaModalLabel">Criar Tarefa</h4>
+        </div>
+        <div class="modal-body">
+            <form method="post" ng-submit="NovaTarefa()">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="Nome" placeholder="Insira um Nome" ng-model="NovaTarefaModel.Nome" />
+                            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Descricao, htmlAttributes: new {@class = "control-label col-sm-3"})
+                        <div class="col-sm-9">
+                            <textarea class="form-control" placeholder="Insira um Descricao" ng-model="NovaTarefaModel.Descricao" rows="3"></textarea>
+                            @Html.ValidationMessageFor(model => model.Descricao, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Inicio, htmlAttributes: new {@class = "control-label col-sm-3"})
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></div>
+                                        <input type="text" class="form-control" name="Inicio" placeholder="__/__/___" ng-model="NovaTarefaModel.Inicio" maxlength="10"/>
+                                        @Html.ValidationMessageFor(model => model.Inicio, "", new {@class = "text-danger"})
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-time"></i></div>
+                                        <input type="text" class="form-control" name="Inicio" placeholder="__:__" ng-model="NovaTarefaModel.Hora_Inicio" maxlength=5"/>
+                                        @Html.ValidationMessageFor(model => model.Inicio, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Entrega, htmlAttributes: new {@class = "control-label col-sm-3"})
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control" name="Entrega" placeholder="__/__/___" ng-model="NovaTarefaModel.Entrega" maxlength="10" />
+                                        @Html.ValidationMessageFor(model => model.Entrega, "", new {@class = "text-danger"})
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="glyphicon glyphicon-time"></i></div>
+                                        <input type="text" class="form-control" name="Inicio" placeholder="__:__" ng-model="NovaTarefaModel.Hora_Entrega" maxlength="5"/>
+                                        @Html.ValidationMessageFor(model => model.Inicio, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-9">
+                            <select class="form-control" name="Status_Id" ng-model="NovaTarefaModel.Status_Id">
+                                <option ng-repeat="status in Status" value="{{status.Id}}">{{status.Nome}}</option>
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Responsavel, htmlAttributes: new {@class = "control-label col-sm-3"})
+                        <div class="col-sm-9">
+                            <select class="form-control" name="Responsavel_Id" ng-model="NovaTarefaModel.Responsavel_Id">
+                                <option ng-repeat="usuario in usuarios" value="{{usuario.Id}}">{{usuario.Nome}}</option>
+                            </select>
+                            @Html.ValidationMessageFor(model => model.Responsavel, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Seguidores, htmlAttributes: new { @class = "control-label col-sm-3" })
+                        <div class="col-sm-9">
+                            <select class="form-control" name="Seguidores" ng-model="NovaTarefaModel.Seguidores" multiple>
+                                <option ng-selected="usuario.Id==NovaTarefaModel.Responsavel_Id" ng-repeat="usuario in usuarios" value="{{usuario.Id}}">{{usuario.Nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

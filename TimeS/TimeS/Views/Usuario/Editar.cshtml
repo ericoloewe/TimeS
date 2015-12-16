@@ -1,0 +1,56 @@
+﻿@model TimeS.Model.ViewModels.UsuarioViewModel
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Editar Usuario</h4>
+        </div>
+        <div class="modal-body">
+            <form method="post" ng-submit="SalvarUsuario()">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <input type="hidden" ng-model="EditarUsuarioModel.Id"/>
+                    <input type="hidden" ng-model="EditarUsuarioModel.Foto" />
+                    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="Nome" placeholder="Insira um Nome" ng-model="EditarUsuarioModel.Nome"/>
+                            @Html.ValidationMessageFor(model => model.Nome, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="Email" placeholder="Insira um Email" ng-model="EditarUsuarioModel.Email" />
+                            @Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Role, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="Role" placeholder="Insira uma Role" ng-model="EditarUsuarioModel.Role"/>
+                            @Html.ValidationMessageFor(model => model.Role, "", new {@class = "text-danger"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="usuarioAtivo">Usuario Ativo</label>
+                        <div class="checkbox col-lg-10">
+                            <label>
+                                <input type="checkbox" id="usuarioAtivo" ng-model="EditarUsuarioModel.Ativo">
+                                Habilite ou Desabilite o Usuario por aqui!
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Lora";
+  src: url("https://fonts.gstatic.com/s/indieflower/v8/10JVD_humAd5zP2yrFqw6ugdm0LZdjqr5-oayXSOefg.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Pacifico";
+  src: url("https://fonts.gstatic.com/s/pacifico/v7/Q_Z9mv4hySLTMoMjnk_rCfesZW2xOQ-xsNqO47m55DA.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Open Sans";
+  src: url("https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+.main-background {
+  width: 110%;
+  height: 350px;
+  margin-left: -15px;
+  background-color: #141d27;
+  background-image: url(/Media/img/background_main.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
+  @media screen and (max-width: 768px) {
+    .main-background {
+      background-attachment: initial;
+      height: 200px; } }
+
+.navbar-inverse {
+  background-color: transparent;
+  border-color: transparent;
+  position: absolute; }
+  .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: transparent; }
+
+.container.body-content {
+  top: 0;
+  width: 100%;
+  margin: 0;
+  left: 0; }
+
+/*# sourceMappingURL=Index.css.map */

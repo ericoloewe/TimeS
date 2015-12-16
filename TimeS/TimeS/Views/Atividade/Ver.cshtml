@@ -1,0 +1,101 @@
+﻿@model IEnumerable<TimeS.Model.Atividade>
+
+@{
+    ViewBag.Title = "Ver";
+}
+
+<div class="container">
+    <h2>Ver</h2>
+    <p>
+        <a data-toggle="modal" data-target="#novaAtividade">Nova</a>
+    </p>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline well well-sm">
+                <span class="glyphicon glyphicon-search" style="padding: 0 15px 0 10px;"></span>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></div>
+                        <input type="text" class="form-control" placeholder="Busque Por Nome Aqui..." ng-model="busca.Nome" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></div>
+                        <input type="text" class="form-control" placeholder="Busque Por Descricao Aqui..." ng-model="busca.Descricao" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th hidden>#</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Nome'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Nome'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descricao)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Descricao'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Descricao'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tipo)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Tipo.Nome'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Tipo.Nome'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Responsavel)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Responsavel.Nome'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Responsavel.Nome'"></span>
+                    </th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="atividade in atividadesfiltrados = (atividades|filter: busca | orderBy: ordem)" ng-style="{'background-color':busca.Nome==atividade.Nome||busca.Descricao==atividade.Descricao?'lightgray':''}">
+                        <td hidden>{{atividade.Id}}</td>
+                        <td>{{atividade.Nome}}</td>
+                        <td>{{atividade.Descricao}}</td>
+                        <td>{{atividade.Tipo.Nome}}</td>
+                        <td>{{atividade.Responsavel.Nome}}</td>
+                        <td>
+                            <a data-toggle="modal" data-target="#editarAtividade" ng-click="EditarAtividade(atividade)">Editar</a> |
+                            <a data-toggle="modal" data-target="#deletarAtividade" ng-click="DeletarAtividade(atividade)">Deletar</a> |
+                            <a ui-sref="detalhesAtividade({ Id: atividade.Id })">Detalhes</a>
+                        </td>
+                    </tr>
+                    <tr ng-show="atividadesfiltrados.length == 0 && atividades!=0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem resultados para os termos "{{'Nome: '+busca.Nome+'\" ou Descricao: \"'+busca.Descricao}}"
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-show="atividades==0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem Atividades Para Exibir :'(
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarAtividade" tabindex="-1" role="dialog" aria-labelledby="Editar Atividade" ui-view="editar"></div>
+    <!-- Modal Deletar -->
+    <div class="modal fade" id="deletarAtividade" tabindex="-1" role="dialog" aria-labelledby="Remover Atividade" ui-view="deletar"></div>
+    <!-- Modal Nova -->
+    <div class="modal fade" id="novaAtividade" tabindex="-1" role="dialog" aria-labelledby="Nova Atividade" ui-view="nova"></div>
+</div>
+

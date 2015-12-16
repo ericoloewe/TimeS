@@ -1,0 +1,44 @@
+﻿@model TimeS.Model.Tarefa
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th hidden>#</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+                <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Nome'"></span>
+                <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Nome'"></span>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+                <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Descricao'"></span>
+                <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Descricao'"></span>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entrega)
+                <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Entrega'"></span>
+                <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Entrega'"></span>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+                <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Status'"></span>
+                <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Status'"></span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="tarefa in tarefasfiltradas = (tarefas | orderBy: ordem)">
+            <td hidden>{{tarefa.Id}}</td>
+            <td>{{tarefa.Nome}}</td>
+            <td>{{tarefa.Descricao}}</td>
+            <td>{{tarefa.Entrega}}</td>
+            <td>{{tarefa.Status}}</td>
+            <td>
+                <a data-toggle="modal" data-target="#editarTarefa" ng-click="EditarTarefa(tarefa)">Editar</a> |
+                <a data-toggle="modal" data-target="#deletarTarefa" ng-click="DeletarTarefa(tarefa)">Deletar</a> |
+                <a data-toggle="modal" data-target="#detalhesTarefa" ng-click="DetalhesTarefa(tarefa)">Detalhes</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

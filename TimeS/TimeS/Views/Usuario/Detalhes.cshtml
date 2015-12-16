@@ -1,0 +1,26 @@
+﻿@model TimeS.Model.ViewModels.UsuarioViewModel
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Detalhes Do Usuario</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <img class="img-thumbnail" src="{{DetalhesUsuarioModel.Foto}}" style="margin-bottom: 20px;" alt="Foto do Usuario" width="200"/>
+                </div>
+                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesUsuarioModel.Nome}}</p>
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesUsuarioModel.Email}}</p>
+                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesUsuarioModel.Role}}</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

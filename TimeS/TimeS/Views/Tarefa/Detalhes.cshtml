@@ -1,0 +1,67 @@
+﻿@model TimeS.Model.ViewModels.TarefaViewModel
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Detalhes Da Tarefa</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Nome}}</p>
+                @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Descricao}}</p>
+                @Html.LabelFor(model => model.Inicio, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Inicio}}</p>
+                @Html.LabelFor(model => model.Hora_Inicio, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Hora_Inicio}}</p>
+                @Html.LabelFor(model => model.Entrega, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Entrega}}</p>
+                @Html.LabelFor(model => model.Hora_Entrega, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Hora_Entrega}}</p>
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <p class="col-sm-10">{{DetalhesTarefaModel.Status}}</p>
+                @Html.LabelFor(model => model.Seguidores, htmlAttributes: new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="seguidor in DetalhesTarefaModel.Seguidores">{{seguidor.Nome}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <label class="control-label col-sm-2" for="Tempo">Add Tempo</label>
+                <div class="col-sm-9">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-time"></i>
+                                </div>
+                                <input type="text" class="form-control" name="Inicio" placeholder="__:__" ng-model="TempoTarefa" maxlength="5">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <button type="button" class="btn btn-primary" ng-click="AddHorasTarefa(DetalhesTarefaModel.Id,TempoTarefa)">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <label class="control-label col-sm-12" for="Tempos">Tempos</label>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="tempo in DetalhesTarefaModel.Tempo">{{tempo.Horas}} Horas no dia {{tempo.Data}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

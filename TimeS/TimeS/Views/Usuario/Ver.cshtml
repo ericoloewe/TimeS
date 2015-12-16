@@ -1,0 +1,103 @@
+﻿@model IEnumerable<TimeS.Model.Usuario>
+
+@{
+    ViewBag.Title = "Ver";
+}
+
+<div class="container">
+    <h2>Ver</h2>
+    <p>
+        <a data-toggle="modal" data-target="#novoUsuario">Novo</a>
+    </p>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline well well-sm">
+                <span class="glyphicon glyphicon-search" style="padding: 0 15px 0 10px;"></span>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                        <input type="text" class="form-control" placeholder="Busque Por Nome Aqui..." ng-model="busca.Nome"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">@@</div>
+                        <input type="text" class="form-control" placeholder="Busque Por Email Aqui..." ng-model="busca.Email"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th hidden>#</th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Foto)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nome)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Nome'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Nome'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Email'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Email'"></span>
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Roles)
+                        <span class="glyphicon glyphicon-menu-down" ng-click="ordem = '-Role'"></span>
+                        <span class="glyphicon glyphicon-menu-up" ng-click="ordem = 'Role'"></span>
+                    </th>
+                    <th></th>
+                </tr>
+                <tbody>
+                    <tr ng-repeat="usuario in usuariosfiltrados = (usuarios|filter: busca | orderBy: ordem)" ng-style="{'background-color':busca.Nome==usuario.Nome||busca.Email==usuario.Email?'lightgray':'','background-color': !usuario.Ativo ? 'rgba(137, 141, 146, 0.43)':'' }">
+                        <td hidden>{{usuario.Id}}</td>
+                        <td>
+                            <img class="img-thumbnail" src="{{usuario.Foto}}" alt="Foto do Usuario" width="150" ng-style="{ 'margin': '0 auto', 'display': 'table'}" />
+                        </td>
+                        <td>{{usuario.Nome}}</td>
+                        <td>{{usuario.Email}}</td>
+                        <td>{{usuario.Role}}</td>
+                        <td>
+                            <a data-toggle="modal" data-target="#editarUsuario" ng-click="EditarUsuario(usuario)">Editar</a> |
+                            <a data-toggle="modal" data-target="#deletarUsuario" ng-click="DeletarUsuario(usuario)">Deletar</a> |
+                            <a data-toggle="modal" data-target="#detalhesUsuario" ng-click="DetalhesUsuario(usuario)">Detalhes</a>
+                        </td>
+                    </tr>
+                    <tr ng-show="usuariosfiltrados.length == 0 && usuarios!=0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem resultados para os termos "{{'Nome: '+busca.Nome+'\" ou Email: \"'+busca.Email}}"
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ng-show="usuarios==0">
+                        <td colspan="5">
+                            <div class="alert alert-info">
+                                <p class="text-center">
+                                    Sem Usuarios Para Exibir :'(
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="Editar Usuario" ui-view="editar"></div>
+    <!-- Modal Deletar -->
+    <div class="modal fade" id="deletarUsuario" tabindex="-1" role="dialog" aria-labelledby="Remover Usuario" ui-view="deletar"></div>
+    <!-- Modal Detalhes -->
+    <div class="modal fade" id="detalhesUsuario" tabindex="-1" role="dialog" aria-labelledby="Detalhes Usuario" ui-view="detalhes"></div>
+    <!-- Modal Novo -->
+    <div class="modal fade" id="novoUsuario" tabindex="-1" role="dialog" aria-labelledby="Novo Usuario" ui-view="novo"></div>
+</div>
+

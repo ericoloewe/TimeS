@@ -1,0 +1,39 @@
+﻿@model TimeS.Model.Atividade
+
+<div class="container">
+    <h2>Detalhes Atividade - {{DetalhesAtividadeModel.Nome}}</h2>
+    <div class="row">
+        @Html.LabelFor(model => model.Descricao, htmlAttributes: new {@class = "control-label col-sm-2"})
+        <p class="col-sm-10">{{DetalhesAtividadeModel.Descricao}}</p>
+        @Html.LabelFor(model => model.Tipo, htmlAttributes: new {@class = "control-label col-sm-2"})
+        <p class="col-sm-10">{{DetalhesAtividadeModel.Tipo.Nome}}</p>
+        @Html.LabelFor(model => model.Criador, htmlAttributes: new {@class = "control-label col-sm-2"})
+        <p class="col-sm-10">{{DetalhesAtividadeModel.Criador.Nome}}</p>
+        @Html.LabelFor(model => model.Responsavel, htmlAttributes: new {@class = "control-label col-sm-2"})
+        <p class="col-sm-10">{{DetalhesAtividadeModel.Responsavel.Nome}}</p>
+        @Html.LabelFor(model => model.Participantes, htmlAttributes: new {@class = "control-label col-sm-2"})
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-6">
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="participante in DetalhesAtividadeModel.Participantes">{{participante.Nome}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <p>
+            <a data-toggle="modal" data-target="#novaTarefa" style="margin-left: 13px;">Nova Tarefa</a>
+        </p>
+        @Html.LabelFor(model => model.Tarefas, htmlAttributes: new {@class = "control-label col-sm-1"})
+        <div class="col-sm-11" ui-view="verTarefas"></div>
+    </div>
+    <!-- Modal Nova -->
+    <div class="modal fade" id="novaTarefa" tabindex="-1" role="dialog" aria-labelledby="Nova Tarefa" ui-view="novaTarefa"></div>
+    <!-- Modal Detalhes -->
+    <div class="modal fade" id="detalhesTarefa" tabindex="-1" role="dialog" aria-labelledby="Detalhes Tarefa" ui-view="detalhesTarefa"></div>
+    <!-- Modal Editar -->
+    <div class="modal fade" id="editarTarefa" tabindex="-1" role="dialog" aria-labelledby="Editar Tarefa" ui-view="editarTarefa"></div>
+    <!-- Modal Deletar -->
+    <div class="modal fade" id="deletarTarefa" tabindex="-1" role="dialog" aria-labelledby="Deletar Tarefa" ui-view="deletarTarefa"></div>
+</div>
